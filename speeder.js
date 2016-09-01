@@ -52,7 +52,7 @@ Speeder.prototype.compare=function(symbol1,symbol2){
          return;
      }
      
-      if (diff2<diff2){
+      if (diff2<diff1){
      
          console.log(symbol2+" is faster from "+symbol1+" by "+(diff1-diff2)+"ms");
          return;
