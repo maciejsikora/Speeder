@@ -31,8 +31,10 @@ Speeder.prototype.result=function(symbol){
         console.log(symbol+" not exists to show result");
         return;
     }
-
-    console.log(symbol+" executed in "+(this.tests[symbol].end-this.tests[symbol].start)+" ms");
+    var result=symbol+" executed in "+(this.tests[symbol].end-this.tests[symbol].start)+" ms";
+    console.log(result);
+    
+    return result;
 }
 
 //compare and show results in console
@@ -45,19 +47,21 @@ Speeder.prototype.compare=function(symbol1,symbol2){
 
      var diff1=this.tests[symbol1].end-this.tests[symbol1].start;
      var diff2=this.tests[symbol2].end-this.tests[symbol2].start;
+     var result="";
      
      if (diff1<diff2){
      
-         console.log(symbol1+" is faster from "+symbol2+" by "+(diff2-diff1)+"ms");
-         return;
-     }
+         result=symbol1+" is faster from "+symbol2+" by "+(diff2-diff1)+"ms";
+         
+     }else if (diff2<diff1){
      
-      if (diff2<diff1){
+         result=symbol2+" is faster from "+symbol1+" by "+(diff1-diff2)+"ms";
+         
+     }else
+     result=symbol2+" and "+symbol1+" by are equal speed";
      
-         console.log(symbol2+" is faster from "+symbol1+" by "+(diff1-diff2)+"ms");
-         return;
-     }
+     console.log(result);
+     return result;
      
-     console.log(symbol2+" and "+symbol1+" by are equal speed");
 
 };
