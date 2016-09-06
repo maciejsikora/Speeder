@@ -24,6 +24,8 @@ Speeder.prototype.end=function(symbol){
 
 };
 
+Speeder.prototype.stop=Speeder.prototype.end;//alias
+
 //show test execition in console
 Speeder.prototype.result=function(symbol){
 
@@ -35,7 +37,7 @@ Speeder.prototype.result=function(symbol){
     console.log(result);
     
     return result;
-}
+};
 
 //compare and show results in console
 Speeder.prototype.compare=function(symbol1,symbol2){
